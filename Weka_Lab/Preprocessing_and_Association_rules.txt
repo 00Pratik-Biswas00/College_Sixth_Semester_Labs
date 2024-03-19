@@ -1,0 +1,81 @@
+1. Classify different filters in Weka for preprocessing of data: -------------------------
+
+Weka provides various filters for preprocessing data, and they can be broadly classified into the following categories:
+
+Adding and Removing Attributes:
+
+Add
+AddID
+Remove
+RemoveUseless
+InterquartileRange
+AddCluster
+AddExpression
+
+Changing Values:
+
+Normalize
+Center
+Standardize
+SwapValues
+MergeTwoValues
+ReplaceMissingValues
+NumericCleaner
+AddValues
+
+Conversions:
+
+Discretize
+MakeIndicator
+NominalToBinary
+NumericToBinary
+
+2. Description of functionalities and parameters for selected filters: -------------------------
+
+Adding and Removing Attributes:
+
+Add: Adds a new attribute to the dataset.
+AddID: Adds a unique identifier attribute to instances.
+Remove: Removes attributes based on indices or names.
+RemoveUseless: Removes attributes that do not contribute to the class prediction.
+InterquartileRange: Filters instances based on the interquartile range.
+AddCluster: Adds a cluster assignment attribute.
+AddExpression: Adds a new attribute based on a mathematical expression.
+
+Changing Values:
+
+Normalize: Scales numeric values to a specific range (default is [0, 1]).
+Center: Centers numeric values by subtracting the mean.
+Standardize: Standardizes numeric values by scaling them to have zero mean and unit variance.
+SwapValues: Swaps two specified values in nominal attributes.
+MergeTwoValues: Merges two specified values in nominal attributes.
+ReplaceMissingValues: Replaces missing values with a specified value or strategy.
+NumericCleaner: Cleans up noisy numeric values.
+AddValues: Adds a constant value to numeric attributes.
+
+Conversions:
+
+Discretize: Converts numeric attributes into nominal ones by creating intervals (bins).
+MakeIndicator: Converts nominal attributes into binary attributes.
+NominalToBinary: Converts nominal attributes into binary ones.
+NumericToBinary: Converts numeric attributes into binary ones.
+
+3. Overview of Apriori association rule mining algorithm and metrics: -------------------------
+
+Apriori is a popular algorithm for mining frequent itemsets and generating association rules. It works by identifying sets of items that frequently occur together in a transactional database.
+
+Metrics used in association rule mining include:
+
+Support: The proportion of transactions that contain the itemset.
+Confidence: The likelihood that a rule is correct.
+Lift: The ratio of the observed support to that expected if the items were independent.
+
+4. Weka's Apriori algorithm parameters and application: -------------------------
+
+Weka's Apriori algorithm allows customization through parameters in the object editor menu. Common parameters include:
+
+Delta: Specifies the minimum change in support.
+LowerBoundMinSupport: The minimum support for an itemset to be considered.
+NumRules: Limits the number of rules generated.
+
+
