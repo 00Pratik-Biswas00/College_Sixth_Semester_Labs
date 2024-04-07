@@ -1,6 +1,15 @@
-# A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast cancer, and report your output. How do you control the growth of  the decision tree while using J48 algorithm? -------------------------
 
-First part - 
+# Week-3: Demonstrate performing classification on data sets.
+
+Questions:
+
+#### [A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast cancer, and report your output. How do you control the growth of the decision tree while using J48 algorithm?](#section-1)
+
+#### [B. Describe and explain each of the classification metrics reported by Weka.](#section-1)
+
+## A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast cancer, and report your output. How do you control the growth of the decision tree while using J48 algorithm? ------------------------- <a name="section-1"></a>
+
+First part -
 
 Load the dataset, 2. Go to the Classification section and choose the J48 classifier, check the results, by right-clicking on the J48 option you can see the Visualize Tree option and check the tree.
 
@@ -8,50 +17,48 @@ Second part -
 
 In Weka's implementation of the J48 algorithm (C4.5 decision tree), you can control the growth of the decision tree using several parameters. Here are some common options:
 
-1. Minimum Number of Instances to Split (MinNumObj): This parameter specifies the minimum number of instances that must be present in a node for it to be considered for splitting further. Increasing this value can prevent the tree from growing too large and overfitting the training data.
+Minimum Number of Instances to Split (MinNumObj): This parameter specifies the minimum number of instances that must be present in a node for it to be considered for splitting further. Increasing this value can prevent the tree from growing too large and overfitting the training data.
 
-2. Confidence Factor (CF): This parameter determines the confidence level used for pruning. Higher values of the confidence factor result in more aggressive pruning, leading to smaller trees.
+Confidence Factor (CF): This parameter determines the confidence level used for pruning. Higher values of the confidence factor result in more aggressive pruning, leading to smaller trees.
 
-4. Subtree Raising Confidence (SubtreeRaising): This parameter controls subtree raising, which is a technique used to prune the tree after it has been built. Increasing this value can lead to more aggressive pruning of subtrees, resulting in smaller trees.
+Subtree Raising Confidence (SubtreeRaising): This parameter controls subtree raising, which is a technique used to prune the tree after it has been built. Increasing this value can lead to more aggressive pruning of subtrees, resulting in smaller trees.
 
-5. Use Reduced Error Pruning (ReducedErrorPruning): Enabling this option applies reduced error pruning to the tree, which can help prevent overfitting by removing branches that do not improve overall accuracy.
+Use Reduced Error Pruning (ReducedErrorPruning): Enabling this option applies reduced error pruning to the tree, which can help prevent overfitting by removing branches that do not improve overall accuracy.
 
-6. Use MDL Correction (UseMDLCorrection): MDL (Minimum Description Length) correction is used to adjust the decision tree model based on the complexity of the data. Enabling this option can help control the growth of the tree by penalizing complex models.
+Use MDL Correction (UseMDLCorrection): MDL (Minimum Description Length) correction is used to adjust the decision tree model based on the complexity of the data. Enabling this option can help control the growth of the tree by penalizing complex models.
 
-
-
-# B. Describe and explain each of the classification metrics reported by Weka. -------------------------
+## B. Describe and explain each of the classification metrics reported by Weka. ------------------------- <a name="section-2"></a>
 
 In the output of a J48 classifier in Weka, you'll typically encounter several performance metrics. Here's what each of them means:
 
-1. Correctly Classified Instances: This refers to the number of instances that were classified correctly by the model.
+Correctly Classified Instances: This refers to the number of instances that were classified correctly by the model.
 
-2. Incorrectly Classified Instances: This refers to the number of instances that were classified incorrectly by the model.
+Incorrectly Classified Instances: This refers to the number of instances that were classified incorrectly by the model.
 
-3. Kappa statistic: This is a statistic that measures the agreement between the observed accuracy and the expected accuracy. It takes into account the possibility of the correct classification occurring by chance.
+Kappa statistic: This is a statistic that measures the agreement between the observed accuracy and the expected accuracy. It takes into account the possibility of the correct classification occurring by chance.
 
-4. Mean absolute error: This is the average of the absolute errors between the predicted and actual values.
+Mean absolute error: This is the average of the absolute errors between the predicted and actual values.
 
-5. Root mean squared error: This is the square root of the average of the squared errors between the predicted and actual values.
+Root mean squared error: This is the square root of the average of the squared errors between the predicted and actual values.
 
-6. Relative absolute error: This is the mean absolute error divided by the mean absolute error of the baseline predictor.
+Relative absolute error: This is the mean absolute error divided by the mean absolute error of the baseline predictor.
 
-7. Root relative squared error: This is the root mean squared error divided by the root mean squared error of the baseline predictor.
+Root relative squared error: This is the root mean squared error divided by the root mean squared error of the baseline predictor.
 
-8. TP Rate (True Positive Rate): This is the ratio of correctly predicted positive instances to all actual positive instances.
+TP Rate (True Positive Rate): This is the ratio of correctly predicted positive instances to all actual positive instances.
 
-9. FP Rate (False Positive Rate): This is the ratio of incorrectly predicted positive instances to all actual negative instances.
+FP Rate (False Positive Rate): This is the ratio of incorrectly predicted positive instances to all actual negative instances.
 
-10. Precision: This is the ratio of correctly predicted positive observations to the total predicted positives. It measures the accuracy of positive predictions.
+Precision: This is the ratio of correctly predicted positive observations to the total predicted positives. It measures the accuracy of positive predictions.
 
-11. Recall: This is the ratio of correctly predicted positive observations to all actual positives. It measures the ability of the classifier to find all positive instances.
+Recall: This is the ratio of correctly predicted positive observations to all actual positives. It measures the ability of the classifier to find all positive instances.
 
-12. F-Measure: This is the harmonic mean of precision and recall. It provides a single score that balances both precision and recall.
+F-Measure: This is the harmonic mean of precision and recall. It provides a single score that balances both precision and recall.
 
-13. MCC (Matthews Correlation Coefficient): This is a correlation coefficient between the observed and predicted binary classifications.
+MCC (Matthews Correlation Coefficient): This is a correlation coefficient between the observed and predicted binary classifications.
 
-14. ROC Area: This is the area under the receiver operating characteristic (ROC) curve. It provides an aggregate measure of performance across all possible classification thresholds.
+ROC Area: This is the area under the receiver operating characteristic (ROC) curve. It provides an aggregate measure of performance across all possible classification thresholds.
 
-15. PRC Area: This is the area under the precision-recall curve. It provides an aggregate measure of performance across all possible classification thresholds.
+PRC Area: This is the area under the precision-recall curve. It provides an aggregate measure of performance across all possible classification thresholds.
 
-16. Confusion Matrix: This matrix summarizes the actual and predicted classifications. It shows the counts of true positive, true negative, false positive, and false negative predictions, allowing for a detailed analysis of classifier performance.
+Confusion Matrix: This matrix summarizes the actual and predicted classifications. It shows the counts of true positive, true negative, false positive, and false negative predictions, allowing for a detailed analysis of classifier performance.
