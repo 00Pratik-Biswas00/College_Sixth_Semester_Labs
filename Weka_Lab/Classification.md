@@ -8,7 +8,7 @@ Second part -
 
 In Weka's implementation of the J48 algorithm (C4.5 decision tree), you can control the growth of the decision tree using several parameters. Here are some common options:
 
-1. Minimum Number of Instances to Split (MinNumObj): This parameter specifies the minimum number of instances that must be present in a node in order for it to be considered for splitting further. Increasing this value can prevent the tree from growing too large and overfitting the training data.
+1. Minimum Number of Instances to Split (MinNumObj): This parameter specifies the minimum number of instances that must be present in a node for it to be considered for splitting further. Increasing this value can prevent the tree from growing too large and overfitting the training data.
 
 2. Confidence Factor (CF): This parameter determines the confidence level used for pruning. Higher values of the confidence factor result in more aggressive pruning, leading to smaller trees.
 
@@ -20,7 +20,7 @@ In Weka's implementation of the J48 algorithm (C4.5 decision tree), you can cont
 
 
 
-B. Describe and explain each of the classification metrics reported by Weka. -------------------------
+# B. Describe and explain each of the classification metrics reported by Weka. -------------------------
 
 In the output of a J48 classifier in Weka, you'll typically encounter several performance metrics. Here's what each of them means:
 
