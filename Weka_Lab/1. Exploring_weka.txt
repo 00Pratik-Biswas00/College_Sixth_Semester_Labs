@@ -1,15 +1,30 @@
-1. Introduction: What is WEKA? -------------------------
+
+# Week-1: Exploring Weka
+
+Questions:
+
+#### [1. Introduction: What is WEKA?](#section-1)
+
+#### [2. Application Modes:](#section-2)
+
+#### [3. Exploring the 'Explorer':](#section-3)
+
+#### [4. 'Preprocess' and 'Visualize' Panels in 'Explorer':](#section-4)
+
+#### [5. ARFF File: Weka's Native Data Storage Format:](#section-5)
+
+## 1. Introduction: What is WEKA? <a name="section-1"></a>
 
 Weka, standing for Waikato Environment for Knowledge Analysis, is a collection of machine learning algorithms for data mining tasks. Developed at the University of Waikato, New Zealand, it is a widely used software for data analysis and machine learning tasks.
 
-2. Application Modes: -------------------------
+## 2. Application Modes: <a name="section-2"></a>
 
 Explorer: The primary mode for interactively exploring datasets, running classifiers, and visualizing results.
 Experimenter: Allows for designing and running experiments to compare the performance of different machine learning algorithms.
 Knowledge Flow: Offers a visual interface for constructing machine learning workflows.
 Simple CLI (Command Line Interface): Provides a command-line interface for running Weka from scripts and batch processing.
 
-3. Exploring the 'Explorer': -------------------------
+## 3. Exploring the 'Explorer': <a name="section-3"></a>
 
 The Explorer mode in WEKA provides an interactive graphical user interface for data analysis and machine learning. It consists of several panels:
 
@@ -20,12 +35,12 @@ Associate: Used for association rule mining.
 Select attributes: Allows selecting relevant features from the dataset.
 Visualize: Offers tools for visualizing dataset statistics and classifier results.
 
-4. 'Preprocess' and 'Visualize' Panels in 'Explorer': -------------------------
+## 4. 'Preprocess' and 'Visualize' Panels in 'Explorer': <a name="section-4"></a>
 
 Preprocess Panel: This panel is crucial for data preprocessing. It provides a range of filters and tools for cleaning and transforming datasets. Users can apply filters for data normalization, attribute selection, and handling missing values.
 
-Visualize Panel: This panel is used to visualize dataset statistics and explore the characteristics of the data. It includes options to plot attribute distributions, class distributions, and ROC curves. Visualization aids understanding the structure and patterns in the data.
+Visualize Panel: This panel is used to visualize dataset statistics and explore the characteristics of the data. It includes options to plot attribute distributions, class distributions, and ROC curves. Visualization aids in understanding the structure and patterns in the data.
 
-5. ARFF File: Weka's Native Data Storage Format: -------------------------
+## 5. ARFF File: Weka's Native Data Storage Format: <a name="section-5"></a>
 
 ARFF (Attribute-Relation File Format) is the native data storage format for WEKA. It is a plain text file that describes instances (rows) sharing a set of attributes (columns). ARFF files contain metadata about the dataset, such as attribute names, data types, and class labels. This format is human-readable and easily convertible to other formats. It facilitates seamless integration of datasets into the WEKA environment, allowing users to perform various machine learning tasks efficiently.
