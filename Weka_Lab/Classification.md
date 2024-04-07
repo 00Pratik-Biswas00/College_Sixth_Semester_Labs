@@ -5,7 +5,7 @@ Questions:
 
 #### [A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast cancer, and report your output. How do you control the growth of the decision tree while using J48 algorithm?](#section-1)
 
-#### [B. Describe and explain each of the classification metrics reported by Weka.](#section-1)
+#### [B. Describe and explain each of the classification metrics reported by Weka.](#section-2)
 
 ## A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast cancer, and report your output. How do you control the growth of the decision tree while using J48 algorithm? ------------------------- <a name="section-1"></a>
 
