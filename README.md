@@ -1,7 +1,9 @@
 # Networks_Lab:
 
 [Parity concept](https://youtu.be/Bwih7_AT1oI?si=jLuhXDhvYoCq3yNy)
+
 [CRC concept](https://youtu.be/5Q-Yv6_0Qcw?si=Vsg0kNJdZ20L43l-)
+
 [Hamming code concept]()
 
 # Soft_Computing_Lab:
