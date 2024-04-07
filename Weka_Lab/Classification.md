@@ -27,7 +27,7 @@ Use Reduced Error Pruning (ReducedErrorPruning): Enabling this option applies re
 
 Use MDL Correction (UseMDLCorrection): MDL (Minimum Description Length) correction is used to adjust the decision tree model based on the complexity of the data. Enabling this option can help control the growth of the tree by penalizing complex models.
 
-## B. Describe and explain each of the classification metrics reported by Weka. ------------------------- <a name="section-2"></a>
+## B. Describe and explain each of the classification metrics reported by Weka. ---------- <a name="section-2"></a>
 
 In the output of a J48 classifier in Weka, you'll typically encounter several performance metrics. Here's what each of them means:
 
