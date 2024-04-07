@@ -1,8 +1,8 @@
-# A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast-cancer, and report your output. How do you control the growth of  decision tree while using J48 algorithm? -------------------------
+## A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast cancer, and report your output. How do you control the growth of  the decision tree while using J48 algorithm? -------------------------
 
 First part - 
 
-Load the dataset, 2. Go to the Classification section and choose the J48 classifier, check the results, by right clicking on the J48 option you can see Visualize Tree option, check the tree.
+Load the dataset, 2. Go to the Classification section and choose the J48 classifier, check the results, by right-clicking on the J48 option you can see the Visualize Tree option and check the tree.
 
 Second part -
 
@@ -20,7 +20,7 @@ In Weka's implementation of the J48 algorithm (C4.5 decision tree), you can cont
 
 
 
-B. Describe and explain each of the classification metric reported by Weka. -------------------------
+B. Describe and explain each of the classification metrics reported by Weka. -------------------------
 
 In the output of a J48 classifier in Weka, you'll typically encounter several performance metrics. Here's what each of them means:
 
