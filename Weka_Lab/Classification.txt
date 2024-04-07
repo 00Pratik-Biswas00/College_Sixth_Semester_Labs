@@ -1,4 +1,4 @@
-A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast-cancer, and report your output. How do you control the growth of  decision tree while using J48 algorithm? -------------------------
+# A. Apply J48 classifier to the following list of data sets: iris, diabetes, segment-challenge, breast-cancer, and report your output. How do you control the growth of  decision tree while using J48 algorithm? -------------------------
 
 First part - 
 
