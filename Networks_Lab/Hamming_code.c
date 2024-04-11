@@ -83,3 +83,10 @@ int main()
 
   return 0;
 }
+
+// Output ->
+
+// Enter a 4-bit message (e.g., 1011): 1101
+// Encoded codeword: 1010101
+// Error detected at bit 4. Correcting...
+// Decoded message: 1101
