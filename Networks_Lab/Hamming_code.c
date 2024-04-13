@@ -84,7 +84,7 @@ void main()
     scanf("%d", &receiver_side[i]);
   }
 
-  // Store data to compute further
+  // Store data to compare further
   for (int i = 0; i < hamming_code_length; i++)
   {
     temp_storing[i] = receiver_side[i];

@@ -28,10 +28,19 @@ void receiver(int arr[10], int sch)
   printf("Sum is: %d", sum);
   sum = sum + sch;
   check_sum = ~sum;
-  printf("Check Sum is: %d", check_sum);
+  printf("\nCheck Sum is: %d", check_sum);
 }
 
 int main()
 {
   int n, sch, rch;
+  printf("\n\nSender Side");
+  printf("\nEnter size of the string for the Sender side: ");
+  scanf("%d", &n);
+  int arr[n];
+  printf("Enter elements of the array for the receiver side ->\n");
+  for (int i = 0; i < n; i++)
+    scanf("%d", &arr[i]);
+  sch = sender(arr, n);
+  receiver(arr, sch);
 }
