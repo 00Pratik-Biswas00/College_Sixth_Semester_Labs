@@ -4,7 +4,6 @@
 
 int main()
 {
-  printf("Welcome to Hamming Code Generation, Detection and Correction Program by cYpHeR under Dr. Salim\n");
   printf("NOTE:- BIT INDEXING STARTS FROM [RIGHT TO LEFT], JUST LIKE IN TEXTBOOKS!\n\n");
   int m_size, rbit = 0, msg[50], data[60], i, j, k;
   printf("Enter message size: ");
@@ -18,7 +17,7 @@ int main()
     rbit++;
   }
   printf("RBit Size is: %d\n", rbit);
-  printf("Enter message bits (space separted): ");
+  printf("Enter message bits (space separated): ");
   for (i = m_size; i >= 1; i--)
   {
     scanf("%d", &msg[i]);
