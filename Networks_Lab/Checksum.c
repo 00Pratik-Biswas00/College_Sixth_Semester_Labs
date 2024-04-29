@@ -31,35 +31,35 @@ void checksumGen(int **data, int n, int k)
     }
     int *carry = decToBin(carrynum, k);
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < k; j++)
-        {
-            printf("%d ", data[i][j]);
-        }
-        printf("<-Segment [%d] \n", (i + 1));
-    }
-    printf("-----------------\n");
-    for (int j = 0; j < k; j++)
-        printf("%d ", data[n][j]);
-    printf("<-Sum1\n");
-    carrynum = 0;
-    for (int i = k - 1; i >= 0; i--)
-    {
-        int sum = carrynum + carry[i] + data[n][i];
-        data[n][i] = sum % 2;
-        carrynum = sum > 0 ? sum >> 1 : 0;
-    }
-    for (int i = 0; i < k; i++)
-        printf("%d ", carry[i]);
-    printf("<-Carry\n");
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = 0; j < k; j++)
+    //     {
+    //         printf("%d ", data[i][j]);
+    //     }
+    //     printf("<-Segment [%d] \n", (i + 1));
+    // }
+    // printf("-----------------\n");
+    // for (int j = 0; j < k; j++)
+    //     printf("%d ", data[n][j]);
+    // printf("<-Sum1\n");
+    // carrynum = 0;
+    // for (int i = k - 1; i >= 0; i--)
+    // {
+    //     int sum = carrynum + carry[i] + data[n][i];
+    //     data[n][i] = sum % 2;
+    //     carrynum = sum > 0 ? sum >> 1 : 0;
+    // }
+    // for (int i = 0; i < k; i++)
+    //     printf("%d ", carry[i]);
+    // printf("<-Carry\n");
     printf("-----------------\n");
     for (int i = 0; i < k; i++)
     {
         printf("%d ", data[n][i]);
         data[n][i] = data[n][i] == 0 ? 1 : 0;
     }
-    printf("<-Sum2\n");
+    printf("<-Sum\n");
     printf("-----------------\n");
     for (int i = 0; i < k; i++)
     {
@@ -85,47 +85,47 @@ void checksumChk(int **data, int n, int k)
     }
     int *carry = decToBin(carrynum, k);
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < k; j++)
-        {
-            printf("%d ", data[i][j]);
-        }
-        printf("<-Segment [%d] \n", (i + 1));
-    }
-    for (int i = 0; i < k; i++)
-    {
-        printf("%d ", data[n][i]);
-    }
-    printf("<-CHECKSUM (Receiver)\n");
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = 0; j < k; j++)
+    //     {
+    //         printf("%d ", data[i][j]);
+    //     }
+    //     printf("<-Segment [%d] \n", (i + 1));
+    // }
+    // for (int i = 0; i < k; i++)
+    // {
+    //     printf("%d ", data[n][i]);
+    // }
+    // printf("<-CHECKSUM (Receiver)\n");
+    // printf("-----------------\n");
+    // for (int j = 0; j < k; j++)
+    //     printf("%d ", chkBucket[j]);
+    // printf("<-Sum1\n");
+    // carrynum = 0;
+    // for (int i = k - 1; i >= 0; i--)
+    // {
+    //     int sum = carrynum + carry[i] + chkBucket[i];
+    //     chkBucket[i] = sum % 2;
+    //     carrynum = sum > 0 ? sum >> 1 : 0;
+    // }
+    // for (int i = 0; i < k; i++)
+    //     printf("%d ", carry[i]);
+    // printf("<-Carry\n");
+    // printf("-----------------\n");
+    // for (int i = 0; i < k; i++)
+    // {
+    //     printf("%d ", chkBucket[i]);
+    //     chkBucket[i] = chkBucket[i] == 0 ? 1 : 0;
+    // }
+    // printf("<-Sum2\n");
     printf("-----------------\n");
-    for (int j = 0; j < k; j++)
-        printf("%d ", chkBucket[j]);
-    printf("<-Sum1\n");
-    carrynum = 0;
-    for (int i = k - 1; i >= 0; i--)
-    {
-        int sum = carrynum + carry[i] + chkBucket[i];
-        chkBucket[i] = sum % 2;
-        carrynum = sum > 0 ? sum >> 1 : 0;
-    }
-    for (int i = 0; i < k; i++)
-        printf("%d ", carry[i]);
-    printf("<-Carry\n");
-    printf("-----------------\n");
-    for (int i = 0; i < k; i++)
-    {
-        printf("%d ", chkBucket[i]);
-        chkBucket[i] = chkBucket[i] == 0 ? 1 : 0;
-    }
-    printf("<-Sum2\n");
-    printf("-----------------\n");
-    bool accept = true;
+    bool accept = false;
     for (int i = 0; i < k; i++)
     {
         printf("%d ", chkBucket[i]);
         if (chkBucket[i] != 0)
-            accept = false;
+            accept = true;
     }
     printf("<-CHECKSUM\n");
     printf("%s", (accept ? "Accepted!" : "Rejected!"));
@@ -154,64 +154,38 @@ int main()
     }
     checksumGen(data, n, k);
     printf("\nNow sender is sending the segments with checksum ... \n\n");
-    printf("------------------------------------------\n");
-    printf("Hello Transmission channel do you want to alter message (y/n): ");
-    char choice;
-    scanf(" %c", &choice);
-    switch (choice)
+
+    printf("You are supposed to enter %d segments of %d length!\n", n, k);
+    for (int i = 0; i < n; i++)
     {
-    case 'y':
-        printf("You are supposed to enter %d segments of %d length!\n", n, k);
-        for (int i = 0; i < n; i++)
-        {
-            printf("Enter segment[%d] (space separated): ", (i + 1));
-            for (int j = 0; j < k; j++)
-            {
-                scanf("%d", &data[i][j]);
-            }
-        }
-        printf("Enter the checksum (space separated): ");
+        printf("Enter segment[%d] (space separated): ", (i + 1));
         for (int j = 0; j < k; j++)
-            scanf("%d", &data[n][j]);
-        break;
-    case 'n':
-        printf("Transmission successfull without error!\n");
-        break;
+        {
+            scanf("%d", &data[i][j]);
+        }
     }
+    printf("Enter the checksum (space separated): ");
+    for (int j = 0; j < k; j++)
+        scanf("%d", &data[n][j]);
+
     checksumChk(data, n, k);
 }
 
 // Enter no of Segmets: 2
-// Enter bit lenght of each segmet:
-// 8
-// Enter segment[1] (space separated): 1 0 1 0 1 0 0 1
-// Enter segment[2] (space separated): 0 0 1 1 1 0 0 1
-// 1 0 1 0 1 0 0 1 <-Segment [1]
-// 0 0 1 1 1 0 0 1 <-Segment [2]
+// Enter bit lenght of each segmet: 8
+// Enter segment[1] (space separated): 1 0 1 0 1 0 1 0
+// Enter segment[2] (space separated): 0 1 0 0 1 1 1 1
 // -----------------
-// 1 1 1 0 0 0 1 0 <-Sum1
-// 0 0 0 0 0 0 0 0 <-Carry
+// 1 1 1 1 1 0 0 1 <-Sum
 // -----------------
-// 1 1 1 0 0 0 1 0 <-Sum2
-// -----------------
-// 0 0 0 1 1 1 0 1 <-CHECKSUM
+// 0 0 0 0 0 1 1 0 <-CHECKSUM
 
 // Now sender is sending the segments with checksum ...
 
-// ------------------------------------------
-// Hello Transmission channel do you want to alter message (y/n): y
 // You are supposed to enter 2 segments of 8 length!
-// Enter segment[1] (space separated): 1 0 1 0 1 0 0 1
-// Enter segment[2] (space separated): 0 0 1 1 1 0 0 1
-// Enter the checksum (space separated): 0 0 0 1 1 1 0 1
-// 1 0 1 0 1 0 0 1 <-Segment [1]
-// 0 0 1 1 1 0 0 1 <-Segment [2]
-// 0 0 0 1 1 1 0 1 <-CHECKSUM (Receiver)
+// Enter segment[1] (space separated): 1 0 1 0 1 0 1 0
+// Enter segment[2] (space separated): 0 1 0 0 1 1 1 1
+// Enter the checksum (space separated): 0 0 0 0 0 1 1 0
 // -----------------
-// 1 1 1 1 1 1 1 1 <-Sum1
-// 0 0 0 0 0 0 0 0 <-Carry
-// -----------------
-// 1 1 1 1 1 1 1 1 <-Sum2
-// -----------------
-// 0 0 0 0 0 0 0 0 <-CHECKSUM
+// 1 1 1 1 1 1 1 1 <-CHECKSUM
 // Accepted!
