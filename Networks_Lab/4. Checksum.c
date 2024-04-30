@@ -116,3 +116,48 @@ int main()
 
     checksumChk(data, n, k);
 }
+
+// 1.
+// Sender Side ->
+// Enter no of Segmets: 2
+// Enter bit lenght of each segmet: 4
+// Enter segment[1] (space separated): 1 0 1 1
+// Enter segment[2] (space separated): 1 0 1 1
+// -----------------
+// 0 1 1 0 <-Sum
+// -----------------
+// 1 0 0 1 <-CHECKSUM
+// -----------------
+
+// Receiver Side ->
+// You are supposed to enter 2 segments of 4 length!
+// Enter segment[1] (space separated): 1 0 1 1
+// Enter segment[2] (space separated): 1 0 1 1
+// Enter the checksum (space separated): 1 0 0 1
+// -----------------
+// 0 0 0 0 <-CHECKSUM
+// -----------------
+// Accepted!
+
+// 2.
+
+// Sender Side ->
+// Enter no of Segmets: 2
+// Enter bit lenght of each segmet: 4
+// Enter segment[1] (space separated): 1 0 1 1
+// Enter segment[2] (space separated): 1 0 1 1
+// -----------------
+// 0 1 1 0 <-Sum
+// -----------------
+// 1 0 0 1 <-CHECKSUM
+// -----------------
+
+// Receiver Side ->
+// You are supposed to enter 2 segments of 4 length!
+// Enter segment[1] (space separated): 1 0 1 1
+// Enter segment[2] (space separated): 1 0 1 1
+// Enter the checksum (space separated): 1 0 1 1
+// -----------------
+// 1 1 1 0 <-CHECKSUM
+// -----------------
+// Rejected!
