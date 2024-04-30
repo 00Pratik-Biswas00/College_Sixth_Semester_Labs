@@ -1,4 +1,3 @@
-// COMPLETE CHECKSUM ELABORATION:- https://www.youtube.com/watch?v=SkJWDOUJJwA
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,28 +30,6 @@ void checksumGen(int **data, int n, int k)
     }
     int *carry = decToBin(carrynum, k);
 
-    // for (int i = 0; i < n; i++)
-    // {
-    //     for (int j = 0; j < k; j++)
-    //     {
-    //         printf("%d ", data[i][j]);
-    //     }
-    //     printf("<-Segment [%d] \n", (i + 1));
-    // }
-    // printf("-----------------\n");
-    // for (int j = 0; j < k; j++)
-    //     printf("%d ", data[n][j]);
-    // printf("<-Sum1\n");
-    // carrynum = 0;
-    // for (int i = k - 1; i >= 0; i--)
-    // {
-    //     int sum = carrynum + carry[i] + data[n][i];
-    //     data[n][i] = sum % 2;
-    //     carrynum = sum > 0 ? sum >> 1 : 0;
-    // }
-    // for (int i = 0; i < k; i++)
-    //     printf("%d ", carry[i]);
-    // printf("<-Carry\n");
     printf("-----------------\n");
     for (int i = 0; i < k; i++)
     {
@@ -66,6 +43,7 @@ void checksumGen(int **data, int n, int k)
         printf("%d ", data[n][i]);
     }
     printf("<-CHECKSUM\n");
+    printf("-----------------\n");
 }
 
 void checksumChk(int **data, int n, int k)
@@ -85,56 +63,24 @@ void checksumChk(int **data, int n, int k)
     }
     int *carry = decToBin(carrynum, k);
 
-    // for (int i = 0; i < n; i++)
-    // {
-    //     for (int j = 0; j < k; j++)
-    //     {
-    //         printf("%d ", data[i][j]);
-    //     }
-    //     printf("<-Segment [%d] \n", (i + 1));
-    // }
-    // for (int i = 0; i < k; i++)
-    // {
-    //     printf("%d ", data[n][i]);
-    // }
-    // printf("<-CHECKSUM (Receiver)\n");
-    // printf("-----------------\n");
-    // for (int j = 0; j < k; j++)
-    //     printf("%d ", chkBucket[j]);
-    // printf("<-Sum1\n");
-    // carrynum = 0;
-    // for (int i = k - 1; i >= 0; i--)
-    // {
-    //     int sum = carrynum + carry[i] + chkBucket[i];
-    //     chkBucket[i] = sum % 2;
-    //     carrynum = sum > 0 ? sum >> 1 : 0;
-    // }
-    // for (int i = 0; i < k; i++)
-    //     printf("%d ", carry[i]);
-    // printf("<-Carry\n");
-    // printf("-----------------\n");
-    // for (int i = 0; i < k; i++)
-    // {
-    //     printf("%d ", chkBucket[i]);
-    //     chkBucket[i] = chkBucket[i] == 0 ? 1 : 0;
-    // }
-    // printf("<-Sum2\n");
     printf("-----------------\n");
-    bool accept = false;
+    bool accept = true;
     for (int i = 0; i < k; i++)
     {
+        chkBucket[i] = chkBucket[i] == 0 ? 1 : 0;
         printf("%d ", chkBucket[i]);
         if (chkBucket[i] != 0)
-            accept = true;
+            accept = false;
     }
     printf("<-CHECKSUM\n");
-    printf("%s", (accept ? "Accepted!" : "Rejected!"));
-    printf("\n");
+    printf("-----------------\n");
+    printf("%s", (accept ? "Accepted!\n" : "Rejected!\n"));
 }
 
 int main()
 {
     int n, k;
+    printf("Sender Side ->\n");
     printf("Enter no of Segmets: ");
     scanf("%d", &n);
     printf("Enter bit lenght of each segmet: ");
@@ -153,8 +99,8 @@ int main()
         }
     }
     checksumGen(data, n, k);
-    printf("\nNow sender is sending the segments with checksum ... \n\n");
 
+    printf("\nReceiver Side ->\n");
     printf("You are supposed to enter %d segments of %d length!\n", n, k);
     for (int i = 0; i < n; i++)
     {
@@ -170,22 +116,3 @@ int main()
 
     checksumChk(data, n, k);
 }
-
-// Enter no of Segmets: 2
-// Enter bit lenght of each segmet: 8
-// Enter segment[1] (space separated): 1 0 1 0 1 0 1 0
-// Enter segment[2] (space separated): 0 1 0 0 1 1 1 1
-// -----------------
-// 1 1 1 1 1 0 0 1 <-Sum
-// -----------------
-// 0 0 0 0 0 1 1 0 <-CHECKSUM
-
-// Now sender is sending the segments with checksum ...
-
-// You are supposed to enter 2 segments of 8 length!
-// Enter segment[1] (space separated): 1 0 1 0 1 0 1 0
-// Enter segment[2] (space separated): 0 1 0 0 1 1 1 1
-// Enter the checksum (space separated): 0 0 0 0 0 1 1 0
-// -----------------
-// 1 1 1 1 1 1 1 1 <-CHECKSUM
-// Accepted!
