@@ -40,10 +40,10 @@ void crc()
 
 int checkErrors()
 {
-  for (i = 0; i < strlen(gen_poly) - 1; i++)
+  for (i = 0; i < strlen(check_value) - 1; i++)
   {
     // Check if any remainder exists
-    if (check_value[data_length + i] == '1')
+    if (check_value[i] == '1')
       return 1; // Error detected
   }
   return 0; // No error detected
