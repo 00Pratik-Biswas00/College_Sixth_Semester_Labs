@@ -2,12 +2,6 @@
 #include <stdbool.h>
 #include <unistd.h>
 
-// Receiver Function
-void receiver(int frame)
-{
-  printf("Receiver: Received frame %d\n", frame);
-}
-
 int main()
 {
   int totalFrames;
@@ -29,7 +23,7 @@ int main()
     }
     if (ack == 1)
     {
-      receiver(frameToSend);
+      printf("Receiver: Received all %d frames \n", frameToSend);
       frameToSend++;
     }
   }

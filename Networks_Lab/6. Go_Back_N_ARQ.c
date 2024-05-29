@@ -2,52 +2,64 @@
 #include <unistd.h>
 
 // Print Window
-void pw(int w[], int ws){
+void printWindow(int w[], int window_size)
+{
   printf("Window Contains : ");
-  for(int i=0;i<ws;i++) printf("%d ",w[i]);
+  for (int i = 0; i < window_size; i++)
+    printf("%d ", w[i]);
   printf("\n");
 }
 
-int main(){
+int main()
+{
   int tf; // Total Frames
   printf("Enter total frames to send : ");
   scanf("%d", &tf);
 
-  int ws; // Window Size
+  int window_size; // Window Size
   printf("Enter the window size : ");
-  scanf("%d", &ws);
-  int w[ws]; // Window
-  int n=1;
-  for(int i=0;i<ws;i++){
-    printf("Sending frame %d\n",n);
-    w[i]=n;
+  scanf("%d", &window_size);
+  int w[window_size]; // Window
+  int n = 1;
+  for (int i = 0; i < window_size; i++)
+  {
+    printf("Sending frame %d\n", n);
+    w[i] = n;
     n++;
   }
-  pw(w,ws);
 
-  while(n-ws<=tf){
+  printWindow(w, window_size);
+
+  while (n - window_size <= tf)
+  {
     int r;
-    printf("Enter acknowledgment for frame %d (ACK:1, NACK:0) : ",w[0]);
+    printf("Enter acknowledgment for frame %d (ACK:1, NACK:0) : ", w[0]);
     scanf("%d", &r);
-    if(r){
+    if (r)
+    {
       printf("\n");
-      for(int i=0;i<ws-1;i++) w[i]=w[i+1];
-      if(n<=tf){
-        printf("Sending frame %d\n",n);
-        w[ws-1]=n;
+      for (int i = 0; i < window_size - 1; i++)
+        w[i] = w[i + 1];
+      if (n <= tf)
+      {
+        printf("Sending frame %d\n", n);
+        w[window_size - 1] = n;
         n++;
       }
-      else{
-        w[ws-1]=0;
+      else
+      {
+        w[window_size - 1] = 0;
         n++;
       }
-      pw(w,ws);
+      printWindow(w, window_size);
     }
-    else{
+    else
+    {
       printf("\nWaiting for %d seconds\n", 1);
       sleep(1);
-      for(int i=0;i<ws;i++) printf("Sending frame %d\n",w[i]);
-      pw(w,ws);
+      for (int i = 0; i < window_size; i++)
+        printf("Sending frame %d\n", w[i]);
+      printWindow(w, window_size);
     }
   }
   return 0;
@@ -58,22 +70,22 @@ int main(){
 // Sending frame 1
 // Sending frame 2
 // Sending frame 3
-// Window Contains : 1 2 3 
+// Window Contains : 1 2 3
 // Enter acknowledgment for frame 1 (ACK:1, NACK:0) : 1
 
 // Sending frame 4
-// Window Contains : 2 3 4 
+// Window Contains : 2 3 4
 // Enter acknowledgment for frame 2 (ACK:1, NACK:0) : 1
 
 // Sending frame 5
-// Window Contains : 3 4 5 
+// Window Contains : 3 4 5
 // Enter acknowledgment for frame 3 (ACK:1, NACK:0) : 0
 
 // Waiting for 1 seconds
 // Sending frame 3
 // Sending frame 4
 // Sending frame 5
-// Window Contains : 3 4 5 
+// Window Contains : 3 4 5
 // Enter acknowledgment for frame 3 (ACK:1, NACK:0) : 1
 
 // Sending frame 6
