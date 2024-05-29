@@ -46,3 +46,45 @@ void main()
       printf("%d", rd[i]);
   }
 }
+
+// 1)
+// Enter 4-bit binary data :
+// 1
+// 0
+// 1
+// 1
+
+// Transmitted Hamming Code :
+// 1010101
+// Received Data :
+// 1
+// 0
+// 1
+// 0
+// 1
+// 0
+// 1
+// No error detected
+
+// 2)
+
+// Enter 4-bit binary data :
+// 1
+// 0
+// 1
+// 1
+
+// Transmitted Hamming Code :
+// 1010101
+// Received Data :
+// 1
+// 0
+// 1
+// 1
+// 1
+// 0
+// 1
+// Error on position in: 4
+// Data sent : 1010101
+// Data received : 1011101
+// Correct message is 1010101
